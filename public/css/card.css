@@ -1,0 +1,50 @@
+/*Style sheet for the card.ejs*/
+
+body
+{
+    width:50%;
+    margin: 0 auto;
+    background-image: url(../images/image8.jpg);
+    background-size: contain;
+    background-repeat:repeat;
+}
+    
+/*Style rule for img*/
+img
+{
+    float: left;
+}
+/*Style rule for table*/
+table 
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 700px;
+    border: 10px solid black;
+    background-color:wheat;
+    table-layout: auto;
+
+}
+  
+/*Style rule for table td*/
+td 
+{
+    text-align: left;
+    padding: 10px;
+    border: 2px dotted black;
+}
+  
+/*Style rule for table th*/  
+th
+{
+  text-align: center;
+  padding: 10px;
+  border: 5px solid black;
+}
+
+/*Style rule for altering the background colurs for rows in table*/ 
+tr:nth-child(even) 
+{
+  background-color: #f2f2f2;
+}
+

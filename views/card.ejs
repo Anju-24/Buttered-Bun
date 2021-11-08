@@ -1,0 +1,79 @@
+<!--Card.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/card.css">
+    <title>Receipt</title>
+</head>
+<body>    
+    <main>
+    <!--Printing the receipt in table form-->        
+    <table>
+        <!--For printing receipt header--> 
+        <tr>
+            <td><img src="images/logo.png"  height="100" alt="header image"></td>            
+            <td colspan="90%"><h2>The Buttered Bun</h2></td>
+        </tr>
+        <tr><th colspan="100%">Receipt</th></tr> 
+        <!--For printing the customer details-->        
+        <tr>
+            <td><label>Name</label></td>
+            <td colspan="80%" ><%= name %></td>
+        </tr>       
+        <tr>
+            <td><label>Address</label></td>
+            <td colspan="80%"><%= address %></td>
+        </tr>       
+        <tr>
+            <td><label>City</label></td>
+            <td colspan="80%"><%= city %></td>
+        </tr>       
+        <tr>
+            <td><label>Province</label></td>
+            <td colspan="80%"><%= province %></td>
+        </tr>          
+        <tr>
+            <td><label>Email</label></td>
+            <td colspan="80%"><%= email %></td>
+        </tr> 
+        <tr>
+            <td><label>Phone</label></td>
+            <td colspan="80%"><%= phone %></td>
+        </tr>
+        <tr>
+            <th colspan="50%">Items</th>
+            <th>Quantity(nos)</th>                      
+            <th colspan="20%">Unit Price ($)</th>
+            <th colspan="20%">Price</th>                        
+                              
+        </tr>
+        <!--Iterating through the items array and printing the item details-->  
+        <% itemsArray.forEach(function( item){ %>
+            <tr> <td colspan="50%"><%= item.itemName %></td> 
+                <td> <%= item.itemQuantity %></td> 
+                <td colspan="20%">$<%= item.itemUnitPrice %></td>                              
+                <td colspan="20%">$<%= item.itemTotalPrice %></td>
+            </tr>
+        <% }) %>
+        <!--For printing the sales tax--> 
+        <tr>
+            <td colspan="80%"><b>Sales Tax(%)</b></td>
+            <td><b><%= taxPercent %>%</b></td>
+        </tr>
+        <!--For printing the tax amount--> 
+        <tr>
+            <td colspan="80%"><b>Tax Amount</b></td>
+            <td><b>$<%= taxAmount %></b></td>
+        </tr>
+        <!--For printing the total amount-->     
+        <tr>
+            <td colspan="80%"><b>Total</b></td>
+            <td><b>$<%= totalAmount %></b></td>
+        </tr>         
+    </table> 
+    </main> 
+</body>
+</html>

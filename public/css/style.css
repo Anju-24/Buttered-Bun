@@ -1,0 +1,229 @@
+/* Style sheet for the home.ejs file */
+/*reset selector*/
+*{
+    margin: 0;
+    padding:0;
+
+  }
+/*Style rule for the body element*/
+body
+{    
+  font-size: 150%;  
+  border:10px groove black;    
+  background-image: url(../images/image9.jpg);
+  background-size: contain;
+  width: 100%;   
+  margin: 0 auto;
+}
+
+/*Style rule for the header element*/
+header
+{
+  border-bottom:10px groove #c4bfa1;;
+  padding:1em 0 4em;
+  background-image: url(../images/backgroundheader.jpg);  
+  height: 300px;
+}
+
+/*Style rule for the header h1 element*/
+header h1
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: normal;
+  color: #350b0bed;
+  font-size: 100px;
+  font-weight: bolder;
+  font-stretch: extra-condensed;
+  text-align: center;
+}
+
+/*Style rule for the header h4 element*/
+header h4
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*Style rule for the header image element*/
+header img
+{
+  float: left;
+  border: 15px groove #c4bfa1;
+}
+
+/*Style rule for setting the box-sizing property*/
+* {
+    box-sizing: border-box;
+  }
+
+/* Float columns side by side */
+.catalogue 
+{
+  float: left;
+  width: 30%;
+  padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row 
+{
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after 
+{
+  display: table;
+}
+
+/* Style the counter cards */
+.card 
+{
+  box-shadow: 4px 4px 8px 0 black;
+  padding: 10px;
+  text-align: center;
+  background-color: #34683a;
+  border-radius: 20px;
+  color: antiquewhite;
+  font-family: cursive;
+  width: 400px;
+}
+
+/* Style the image in the cards */
+.container-image
+{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;   
+}
+/*Style rule for labels*/
+label
+{
+  display: flow-root;
+  padding: 0.5em;
+}
+
+/*Style rule for customer details table*/
+table
+{
+  width: 400px;
+  border: 3px solid white;
+  box-shadow: 0 0 10px #2c2c2c;
+  padding: 30px;
+  margin: 50px auto;
+  color: white;
+  background-color: #3a1330;
+  border-radius: 20px;
+}
+
+/*Style rule for the error class*/
+.error
+{
+  font-size: 15px;
+  color:red;
+  width:100%
+}
+
+/*Style rule for the checkout button*/
+input[type="submit"]
+{
+  width: 200px; 
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  background-color:green;
+  font-size: 30px;
+  color: white;
+  box-shadow:2px 2px 2px 2px black ;
+  border-radius: 10px;
+  cursor: pointer;   
+}
+
+input[type="submit"]:active
+{
+  box-shadow: -4px -4px 0px black;
+}
+
+/*Style rule for the container element*/
+.container
+{
+  padding-left: 4em;
+}
+
+/*Style rule for the top banner*/
+.banner
+{
+  float:center;
+  text-align: center;
+  color:rgb(9, 9, 24);
+  background: darkgoldenrod;
+  height: 60px;
+  width: 100%;
+}
+
+/*Styling for the input boxes */
+table input[type="text"],[type="email"] {   
+  width: 100%; 
+  padding: 20px 0;
+  height: 40px;
+}
+
+/*Styling for the input quantity boxes */
+input[type="text"]{
+  width: 40%; 
+  padding: 2em;
+  height: 40px;
+}
+
+h4
+{
+  margin: 10px;
+}
+
+/*Styling for custom error placeholder */
+.minerror
+{
+  width: 100%;
+  text-align: center;
+  color: red;
+  background-color: antiquewhite;
+  
+}
+
+/*Styling for the quantity errors */
+.quantityerror
+{
+  width:100%;
+  font-size: 15px;
+  height: 100%;
+  color: red;
+  height:50px;
+}
+
+/*Styling for the glowing element in the header 
+credits:https://www.w3schools.com/ */
+.glow 
+{
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow 
+{
+  from 
+  {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #96705e, 0 0 40px #201c1c, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to 
+  {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+

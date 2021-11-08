@@ -1,0 +1,246 @@
+<!--Home.ejs-->
+
+<!--Declaring and assigning variable to hold the errors and inputs-->
+<%
+var name=name;
+var address=address;
+var city=city;
+var province=province;
+var phone=phone;
+var email=email;
+
+var nameError='';
+var addressError='';
+var cityError='';
+var provinceError='';
+var phoneError='';
+var emailError='';
+
+var brownies=brownies;
+var blueberryMuffins=blueberryMuffins;
+var chocolateCookies =chocolateCookies;
+var macarons =macarons;
+var cheeseCakes =cheeseCakes;
+var croissants =croissants;
+
+var browniesError='';
+var blueberryMuffinsError='';
+var chocolateCookiesError ='';
+var macaronsError ='';
+var cheeseCakesError ='';
+var croissantsError =''; 
+var minimumCheckError ='';
+
+<!--Checking for the error type and storing in variables-->
+if(typeof(errors) != 'undefined')
+{
+    for(var error of errors)
+    {
+        switch(error.param)
+        {
+        case 'name':        name=error.value;
+                            nameError=error.msg;
+                            break;
+        case 'address':     address=error.value;
+                            addressError=error.msg;
+                            break;
+        case 'city':        city=error.value;
+                            cityError=error.msg;
+                            break;
+        case 'province':    province=error.value;
+                            provinceError=error.msg;
+                            break;
+        case 'phone':       phone=error.value;
+                            phoneError=error.msg;
+                            break;
+        case 'email':       email=error.value;
+                            emailError=error.msg;
+                            break;
+        
+        case('brownies'):   brownies=error.value;
+                            browniesError=error.msg;
+                            break;
+        case('blueberryMuffins'):
+                            blueberryMuffins=error.value;
+                            blueberryMuffinsError=error.msg;
+                            break;
+        case('chocolateCookies'):
+                            chocolateCookies=error.value;
+                            chocolateCookiesError=error.msg;
+                            break;
+        case('macarons'):
+                            macarons=error.value;
+                            macaronsError=error.msg;
+                            break;
+        case('cheeseCakes'):
+                            cheeseCakes=error.value;
+                            cheeseCakesError=error.msg;
+                            break;
+        case ('croissants'):   
+                            croissants=error.value;
+                            croissantsError=error.msg;
+                            break;
+        case('minimumCheck') : 
+                            minimumCheckError=error.msg;
+                            break;
+        }
+    }
+}
+
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Buttered Bun</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">   
+</head>
+<body>
+    <header>
+        <img src="images/logo.png"  height="250" alt="header image">
+		<h1 class="glow">The Buttered Bun</h1>
+		<h4>-Since 1990</h3>        
+    </header>
+    <main>        
+        <h2 class="banner">Cakes & Treats</h2> 
+        <!--Form--> 
+        <form action="process" method="POST">                    
+                    <div class="container">                  
+                    <!--Item Brownies-->                    
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Brownies</h2>
+                            <img class= "container-image"src="images/brownies.jpg" alt="brownies image">
+                            <h4>Rate/piece</h4><label>$3</label>
+                            <input type="text" name="brownies" id="brownies" placeholder="Enter Quantity" value="<%= brownies %>">
+                            <p class='quantityerror'><%= browniesError %></p>
+                        </div>                       
+                    </div>                    
+                    <!--Item Blueberry Muffins-->
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Blueberry Muffins</h2>
+                            <img class= "container-image" src="images/blueberrymuffins.jpg" alt="blueberry muffins image">                      
+                            <h4>Rate/piece</h4><label>$8</label>
+                            <input type="text" name="blueberryMuffins" id="blueberryMuffins" placeholder="Enter Quantity" value="<%= blueberryMuffins %>">
+                            <p class='quantityerror'><%= blueberryMuffinsError %></p>
+                        </div>                        
+                    </div>
+                    <!--Item Chocolate cookies-->
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Chocolate Cookies</h2>
+                            <img class= "container-image" src="images/chocolatecookies.jpg" alt="chocolate cookies image">                      
+                            <h4>Rate/piece</h4><label>$6</label>
+                            <input type="text" name="chocolateCookies" id="chocolateCookies" placeholder="Enter Quantity" value="<%= chocolateCookies %>">
+                            <p class='quantityerror'><%= chocolateCookiesError %></p>
+                        </div>                        
+                    </div>
+                    <!--Item Macarons-->
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Macarons</h2>
+                            <img  class= "container-image" src="images/macarons.jpg" alt="macarons image">                      
+                            <h4>Rate/piece</h4><label>$3</label>
+                            <input type="text" name="macarons" id="macarons" placeholder="Enter Quantity" value="<%= macarons %>">                            
+                            <p class='quantityerror'><%= macaronsError %></p>
+                        </div>                       
+                    </div>
+                    
+                    <!--Item Cheese Cakes -->     
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Cheese Cakes(Mini)</h2>                            
+                            <img  class= "container-image" src="images/cheesecake.jpg"  alt="cheesecake image">
+                            <h4>Rate/piece</h4><label>$6 </label>
+                            <input type="text" name="cheeseCakes" id="cheeseCakes" placeholder="Enter Quantity" value="<%= cheeseCakes %>">
+                            <p class='quantityerror'><%= cheeseCakesError %></p>
+                        </div>                        
+                    </div>
+                    <!--Item Croissants-->
+                    <div class="catalogue">
+                        <div class="card">
+                            <h2>Croissants</h2>
+                            <img class= "container-image" src="images/croissant.jpg" alt="croissant image">                      
+                            <h4>Rate/piece</h4><label>$5</label>
+                            <input type="text" name="croissants" id="croissants" placeholder="Enter Quantity" value="<%=  croissants %>">                         
+                            <p class='quantityerror'><%= croissantsError %></p>
+                        </div>                       
+                    </div>               
+               </div>
+               <!--Placeholder for the custom errors-->
+               <div><label class='minerror'name="minimumCheck" id="minimumCheck"><%= minimumCheckError %></label></div> 
+               <!--Table for customer details-->              
+                <table id="customer-details">  
+                <tr><th colspan="100%">Customer Details</th></tr>              
+                <!--Form Field Name-->                
+                    <tr>
+                        <td><label>Name*</label></td>
+                        <td><input id="name" placeholder="First Last" type="text" name="name" value="<%= name %>"></td>                        
+                      </tr>
+                      <tr>
+                        <td class='error'><%= nameError %></td>
+                      </tr>                         
+                <!--Form Field Address-->                
+                    <tr>
+                        <td><label>Address*</label></td>
+                        <td><input id="address" placeholder="Address" type="text" name="address" value="<%= address %>"></td>
+                      </tr>
+                      <tr>
+                        <td class='error'><%= addressError %></td>
+                      </tr>                      
+                              
+                <!--Form Field City-->                
+                <tr>
+                    <td><label>City*</label></td>
+                    <td><input id="city" placeholder="City" type="text" name="city" value="<%= city %>"></td>
+                  </tr>
+                  <tr>
+                    <td class='error'><%= cityError %></td>
+                  </tr> 
+                  <!--Form Field Province-->
+                  <tr>
+                    <td><label>Province*</label></td> 
+                    <td>
+                    <select style="height: 40px;"id="province" name="province" value="<%= province %>">
+                        <%
+                        var options = ["Please Select","Alberta","British Columbia", "Manitoba","New Brunswick", "Newfoundland and Labrador", 
+                        "Northwest Territories","Nova Scotia", "Nunavut","Ontario","Prince Edward Island","Quebec","Saskatchewan","Yukon" ];
+                        for ( var i = 0; i < options.length; i++ )
+                        {
+                            var selected = ( province == options[i] ) ? "selected" :" "; 
+                            %><option value="<%=options[i] %>" <%= selected %>><%=options[i] %></option>
+                            <%
+                        }
+                        %>
+                    </select></td>
+                    </tr>             
+                    <tr> 
+                    <td class='error'><%= provinceError %></td>
+                    </tr>                            
+                <!--Form Field Email-->
+                <tr>
+                  <td><label>Email*</label></td>
+                  <td><input id="email" placeholder="email@domain.com" type="text" name="email" value="<%= email %>"></td>
+                </tr>
+                <tr>
+                    <td class='error'><%= emailError %></td>
+                </tr>                
+                <!--Form Field Phone--> 
+                <tr>
+                    <td><label>Phone*</label></td>
+                    <td><input id="phone" placeholder="Phone" type="text" name="phone" value="<%= phone %>"></td>
+                </tr> 
+                <tr>
+                    <td class='error'><%= phoneError %></td>
+                </tr>         
+            </table> 
+            <!--Button for checkout--> 
+            <input type="submit" value="Checkout" id="submit">
+            </form>                   
+    </main>    
+</body>
+</html>
